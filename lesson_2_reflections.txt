@@ -1,0 +1,86 @@
+How to Use Git and GitHub: Lesson 2 Reflections
+
+What happens when you initialize a repository? Why do you need to do it?
+	A .git file is added to the directory from which you are creating the repository. This is needed
+	because this is the start signal for git to start tracking all of the changes made to the files in
+	the repository.
+
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+	The staging area is an intermediate zone where a file or files go to be assigned to a commit. The
+	working directory is simply a folder on your computer and the repository is a git-enabled folder
+	on your computer. The value the staging area offers is that it allows the user to group multiple
+	files together for one commit. it is easy to add and remove files from the staging area, plus you
+	don't need to add everything at once.
+
+	working directory
+	staging area - git add to puts things here ready for commits.
+	repo - where things are after commit.
+
+	git reset -- hard in either the staging area or the working directory. BE CAREFUL WITH THIS.
+
+How can you use the staging area to make sure you have one commit per logical change?
+	You can add only the files associated with the logical change - not all of the files in the working
+	repository - to the staging area and then make a commit. This will ensure one commit is made per
+	logical change.
+
+	git allows labelling for commit - aka branches.
+
+	main branch: master.
+
+	git branch gives us the currently checked out branch.
+
+	git branch [branch-name]
+	git checkout [branch-name]
+
+	combine the two above commands to:
+
+	git checkout -b [branch-name]
+
+What are some situations when branches would be helpful in keeping your history
+organized? How would branches help?
+	Branches would be helpful when you want to build a new feature on a working copy of your program.
+	Instead of working on the new feature and having to revert to the working copy when you want your
+	program to work, you could create a new branch and add the new feature on that branch. The main,
+	working branch will still be intact.
+
+	git log --graph --oneline master coins
+
+How do the diagrams help you visualize the branch structure?
+	Diagrams help us visualize the branch structure but lining up which commits are associated with
+	each other in terms of the parent-child relationship.
+
+	To merge 2 branches:
+
+	merge a branch into master:
+	
+	First, checkout the branch you want to merge into.
+
+	git checkout master
+
+	git merge master [branch-name] - commits are ordered by timestamp.
+
+	git show commit_id1 commit_id2
+
+	git branch -d coins - deletes the branch label, not the commits.
+
+
+What is the result of merging two branches together? Why do we represent it in
+the diagram the way we do?
+	Merging two branches together takes all of the commits from both branches and combines them in
+	chronological order. We represent it in the diagram with arrows from the new head pointing to both
+	branches becuase the newest merge commit stores information about both of its parents. The new
+	merged branch takes the name of the currently checked out branch.
+
+What are the pros and cons of Git's automatic merging vs. always doing merges manually?
+	PROS:
+	- faster
+	- simple
+	- merge conflicts are presented in a logical manner
+	CONS:
+	- conflicts may arise and make the merge more complicated
+	- if you don't understand how merging works, the merged file may not be what you expected
+
+A useful one to know is how to back out of a merge if you've started it in the wrong place:
+
+	git merge --abort

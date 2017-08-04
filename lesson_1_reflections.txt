@@ -1,0 +1,49 @@
+How to Use Git and GitHub: Lesson 1 Reflections
+
+How did viewing a diff between two versions of a file help you see the bug that was introduced?
+	The FC (File Comparison) allowed me to immediately locate the lines that were changed. Finding the bug at that point was a matter or scanning the lines and 	looking for typos.
+
+How could having easy access to the entire history of a file make you a more efficient programmer
+in the long term?
+	Locating bugs is easier when you can narrow down the location by comparing different versions of the file.
+
+What do you think are the pros and cons of manually choosing when to create a commit, like you do
+in Git, vs having versions automatically saved, like Google Docs does?
+	PROS:
+	- can label changes with logical commit messages, therefore easier to scan history
+	- won't have too many copies saved
+	CONS:
+	- prone to human error (might forget to commit a change)
+
+Why do you think some version control systems, like Git, allow saving multiple files in one
+commit, while others, like Google Docs, treat each file separately? 
+	Git often deals with systems of multiple files that work together to produce one "product" (i.e. HTML and CSS working together to create a webpage). Saving 	multiple files in one commit is necessary because one single logical change can be made and two files can be affected by it.
+
+How can you use the commands git log and git diff to view the history of files?
+	You can use git log to view the history of all file changes alongside their commit messages. You
+	can use git diff to compare the changes between two editions of files via highlighting the lines
+	that were added and deleted.
+
+	git log --stat
+
+	(q to quit, down arrow to scroll down.)
+
+	git diff id1 id2
+
+	git checkout 3884eab839af1e82c44267484cf2945a766081f3
+
+	git diff b0678b161fcf74467ed3a63110557e3d6229cfa6 3884eab839af1e82c44267484cf2945a766081f3
+
+How might using version control make you more confident to make changes that could break something?
+	Version control allows you to easily revert to a working edition of a file or set of files. Making
+	changes that could potentially break something should not be intimidating because version control
+	removes the worst consequences.
+
+
+	mv Downloads/git-completion.bash git-completion.bash
+	mv Downloads/git-prompt.sh git-prompt.sh
+	mv Downloads/bash_profile_course .bash_profile
+
+	git config --global core.editor "'C:/Program\ Files\ \(x86\)/Notepad++/notepad++.exe' -n -w"
+	git config --global push.default upstream
+	git config --global merge.conflictstyle diff3
