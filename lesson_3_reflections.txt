@@ -1,0 +1,38 @@
+When would you want to use a remote repository rather than keeping all your work
+local?
+  Remote repositories are useful for projects that require collaboration and projects that you want
+  to share with others.
+
+Why might you want to always pull changes manually rather than having Git
+automatically stay up-to-date with your remote repository?
+  Git automatically staying up-to-date with your remote repository might create the situation where
+  you incorporate incomplete/buggy/in-progress code from the remote into your local repository, which
+  you might have reserved for production-quality code.
+
+Describe the differences between forks, clones, and branches.  When would you
+use one instead of another?
+  Fork = cloning a repo that is not yours that is already on GitHub. Use when you want the contents
+  of another repo to which you don't want or are not allowed to make changes.
+  Clone = making a copy of a repo (can be on GitHub or present locally). Use when you want a copy and
+  don't want the inherent tracking present in forks.
+  Branch = making a new commit path that builds upon the commits already present in the branch. Use
+  when you want to create a new feature that can later be implemented into the "working" product.
+
+What is the benefit of having a copy of the last known state of the remote
+stored locally?
+  You can access all of the remote commits offline up to the last sync.
+
+How would you collaborate without using Git or GitHub?  What would be easier,
+and what would be harder?
+  You and your collaborators could email files between one another, use Dropbox, etc. and manually
+  track versions. Git and GitHub is much easier since the software automates the manual tracking
+  procecss.
+
+When would you want to make changes in a separate branch rather than directly in
+master?  What benefits does each approach have?
+  You would want to make changes in a separate branch when you don't want to mess with the master
+  branch (i.e. when collaborating and someone else owns the project and therefore controls the master
+  branch). Working directly in the master branch is appropriate when you are the only one working on
+  the project and therefore don't care about others adding their own features to your base code.
+  Benefits for separate branch: collaboration is promoted.
+  Benefits for master: simpler, but collaboration not promoted.
